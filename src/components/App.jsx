@@ -9,17 +9,9 @@ function App() {
   const handleChange = (event) => {
     const { value, name } = event.target;
 
-    if (name === "fName") {
-      setFullName({
-        fName: value,
-        lName: fullName.lName,
-      });
-    } else if (name === "lName") {
-      setFullName({
-        fName: fullName.fName,
-        lName: value,
-      });
-    }
+    // made the key dynamic
+
+    setFullName({ ...fullName, [name]: value });
   };
 
   return (
